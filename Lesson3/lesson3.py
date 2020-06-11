@@ -135,6 +135,71 @@ print("This week's total sales: " + str(total_sales))
 print("\n")
 
 
-#Part 
+#Part 16 quiz 1
+# Browse the complete list of string methods at:
+# https://docs.python.org/3/library/stdtypes.html#string-methods
+# and try them out here
+
+text="The COVID-19 coronavirus pandemic"
+print("Convert text to lower cases: " + text.lower())
+print(text.find("virus"))
+
+text2 = "There were averate {0} people died per day in the past {1} days"
+print(text2.format(3,7))
+print("\n")
+
+
+#Part 17
+lst_of_random_things = [1, 3.4, 'a string', True]
+print(lst_of_random_things[1:2])
+print(5 not in [1, 2, 3, 4, 6])
+print('isa' in 'this is a string')
+print("\n")
+
+
+#Part 18 quiz 1
+month = 8
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+# use list indexing to determine the number of days in month
+
+num_days = days_in_month[month-1]
+print(num_days)
+print("\n")
+
+
+#Part 18 quiz 2
+eclipse_dates = ['June 21, 2001', 'December 4, 2002', 'November 23, 2003',
+                 'March 29, 2006', 'August 1, 2008', 'July 22, 2009',
+                 'July 11, 2010', 'November 13, 2012', 'March 20, 2015',
+                 'March 9, 2016']
+                 
+# TODO: Modify this line so it prints the last three elements of the list
+
+print(eclipse_dates[-3:])
+print("\n")
+
+
+
+#Part 19
+new_str = "\n".join(["fore", "aft", "starboard", "port"])
+print(new_str)
+print(len(new_str))
+
+letters = ['a', 's', 'c', 'd']
+letters.append('z')
+print(letters)
+print(max(letters))
+print(min(letters))
+print(sorted(letters)) #sorted doesn't change the original list
+print(letters)
+print("\n")
+
+
+
+#Part 20 
+names = ["Carol", "Albert", "Ben", "Donna"]
+print(" & ".join(sorted(names)))
+
 
 
