@@ -149,7 +149,7 @@ print(text2.format(3,7))
 print("\n")
 
 
-#Part 17
+#Part 17 list
 lst_of_random_things = [1, 3.4, 'a string', True]
 print(lst_of_random_things[1:2])
 print(5 not in [1, 2, 3, 4, 6])
@@ -181,7 +181,7 @@ print("\n")
 
 
 
-#Part 19
+#Part 19 list join & append
 new_str = "\n".join(["fore", "aft", "starboard", "port"])
 print(new_str)
 print(len(new_str))
@@ -200,6 +200,45 @@ print("\n")
 #Part 20 
 names = ["Carol", "Albert", "Ben", "Donna"]
 print(" & ".join(sorted(names)))
+print("\n")
+
+
+#Part 21 tuples 元组
+#有序对象集合，对象不能编辑， 通常于紧凑的对象对儿或者快速存取类似list一样的值
+location = (13.4125, 103.866667)
+print("Latitude:", location[0])
+print("Longitude:", location[1])
+print(type(location))
+
+dimensions = 52, 40, 100
+length, width, height = dimensions
+print("The dimensions are {} x {} x {}".format(length, width, height))
+
+length, width, height = 52, 40, 100
+print("The dimensions are {} {} {}".format(length, width, height))
+print("\n")
+
+
+#Part 23 Set 集合
+# Mutable Unordered Collections of Unique Elements
+numbers = [1, 2, 6, 3, 1, 1, 6]
+unique_nums = set(numbers)
+print(unique_nums)
+
+fruit = {"apple", "banana", "orange", "grapefruit"} # define a set
+print("watermelon" in fruit) # check for element
+fruit.add("watermelon")  # add an element
+print(fruit)
+
+print(fruit.pop()) # remove a random element
+print(fruit)
+
+#可以对集合轻松地执行 union、intersection 和 difference 等方法，并且与其他容器相比，速度快了很多。
+print("\n")
+
+
+#Part 
+
 
 
 
