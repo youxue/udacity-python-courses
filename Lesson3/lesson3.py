@@ -237,7 +237,67 @@ print(fruit)
 print("\n")
 
 
-#Part 
+#Part 25 Dictionary (key value type)
+#Mutasble object that store mappings of unique keys to values
+#键必须是不可变类型，例如 str, int, fload. 像 list 这种可变类型不能为键
+elements = {"hydrogen": 1, 
+            "helium":2, 
+            "carbon": 6}
+print(elements["helium"])
+print("carbon" in elements)
+print(elements.get("dilithium"))
+
+n = elements.get("dilithium")
+print(n is None)
+print(n is not None)
+print(elements.get('kryptonite', 'There\'s no such element!')) #后面的文字是get返回None 时设置的默认返回值
+print("\n")
+
+
+#Part 26 quiz 1
+#但是 a 和 c（同样 b 也是）指向两个不同的对象，即它们不是相同的对象。这就是检查是否相等与恒等的区别
+# == 检查是否相等， is 检查恒等即指向相等
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a == b)
+print(a is b)
+print(a == c)
+print(a is c)
+print("\n")      
+
+
+#Part 28 复合数据结构
+elements = {"hydrogen":{"number": 1,
+                        "weight": 1.00794,
+                        "symbol": "H"
+                        },
+            "helium":{"number": 2,
+                      "weight": 4.002602,
+                      "symbol": "He"
+                      }
+            }
+helium = elements["helium"] # get the helium dictionary
+hydrogen_weight = elements["hydrogen"]["weight"]
+print(helium)
+print(hydrogen_weight)
+print("\n")   
+
+
+#Part 29 quiz 1
+elements = {'hydrogen': {'number': 1, 'weight': 1.00794, 'symbol': 'H'},
+            'helium': {'number': 2, 'weight': 4.002602, 'symbol': 'He'}}
+# todo: Add an 'is_noble_gas' entry to the hydrogen and helium dictionaries
+# hint: helium is a noble gas, hydrogen isn't
+elements["hydrogen"]["is_noble_gas"] = False
+elements["helium"]["is_noble_gas"] = True
+
+print(elements["hydrogen"], "\n" , elements["helium"])
+
+
+
+
 
 
 
