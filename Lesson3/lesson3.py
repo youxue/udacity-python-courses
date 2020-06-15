@@ -216,6 +216,15 @@ print("The dimensions are {} x {} x {}".format(length, width, height))
 
 length, width, height = 52, 40, 100
 print("The dimensions are {} {} {}".format(length, width, height))
+
+data = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))
+items = data[:-1]
+last_item = data[-1]
+for a in zip(data):
+    print(a)
+#data_transpose = tuple(zip(items, last_item))
+data_transpose = tuple(zip(*data))
+print(data_transpose)
 print("\n")
 
 
@@ -251,6 +260,12 @@ n = elements.get("dilithium")
 print(n is None)
 print(n is not None)
 print(elements.get('kryptonite', 'There\'s no such element!')) #后面的文字是get返回None 时设置的默认返回值
+
+cast_names = ["Barney", "Robin", "Ted", "Lily", "Marshall"]
+cast_heights = [72, 68, 72, 66, 76]
+
+cast = dict(zip(cast_names, cast_heights))
+
 print("\n")
 
 
