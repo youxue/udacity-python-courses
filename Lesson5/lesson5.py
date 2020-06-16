@@ -110,3 +110,67 @@ print(short_cities)
 short_cities = list(filter(lambda name : len(name) < 10, cities))
 print(short_cities)
 print("\n")
+
+
+#Part 14 Iterator and Generator
+
+def my_range(x):
+    i = 0
+    while i < x:
+        yield i
+        i += 1
+
+#yield 函数能够一次返回一个值，并且每次被调用时都从停下的位置继续
+#yong  return 会报错： 'int' object is not iterable
+
+for x in my_range(5):
+    print(x)
+    
+
+#Part 15 quiz 1
+''' 
+为什么使用生成器 而不直接用 list
+由于使用生成器是一次处理一个数据，在内存和存储的需求上会比使用 list 方式直接全部生成再存储节省很多资源。
+
+由此区别，在处理大量数据时，经常使用生成器初步处理数据后，再进行长期存储，而不是使用 list。因为无论使用生成器还是 list，都是使用过就要丢弃的临时数据。既然功能和结果一样，那就不如用生成器。
+
+但是生成器也有自己的局限，它产生的数据不能回溯，不像 list 可以任意选择。
+'''
+
+lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow", "Functions", "Scripting"]
+def my_enumerate(iterable, start=0):
+    while(start <= len(iterable)):
+        yield start, iterable[start - 1]
+        start += 1
+
+'''udacity 上的答案
+def my_enumerate(iterable, start=0):
+    count = start
+    for element in iterable:
+        yield count, element
+        count += 1
+'''
+
+
+for i, lesson in my_enumerate(lessons, 1):
+    print("Lesson {}: {}".format(i, lesson))
+
+
+#Part 15 quiz 2
+def chunker(iterable, size):
+    start = 0
+    while(start < len(iterable)):
+        if start + size <= len(iterable):
+            yield list(iterable[start : start + size])
+        else:
+            yield list(iterable[start : ])
+        start += size
+#udacity 的答案
+    """Yield successive chunks from iterable of length size."""
+    '''for i in range(0, len(iterable), size):
+        yield iterable[i:i + size]'''
+
+
+for chunk in chunker(range(25), 4):
+    print(list(chunk))
+
