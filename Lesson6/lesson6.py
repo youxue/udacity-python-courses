@@ -105,3 +105,21 @@ print("\nCreating 0 groups...")
 for group in create_groups(range(32), 0):
     print(list(group))
     print("WARNING: Returning empty list. Please use a nonzero number.")
+
+print("\n")
+
+
+#Part 17 访问错误消息
+try:
+    #some code
+    print(1/2)
+except ZeroDivisionError as e:
+    print("ZeroDivisionError occurred: {}".format(e))
+    
+try:
+    #some code
+    print(1/2)
+except Exception as e:
+    #Exception 是所有内置异常的基础类
+    print("ZeroDivisionError occurred: {}".format(e))
+
